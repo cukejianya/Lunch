@@ -14,7 +14,7 @@ var routes = function(app, passport) {
   });
 
   app.get('/profile', isLoggedIn, function(req,res) {
-    res.redner('profile.ejs', {
+    res.render('profile.ejs', {
       user : req.user
     })
   });
@@ -31,3 +31,5 @@ function isLoggedIn(req, res, next) {
 
     res.redirect('/');
 }
+
+module.exports = routes;
