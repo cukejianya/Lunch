@@ -1,0 +1,24 @@
+{
+  "name": "lunch",
+  "version": "0.0.1",
+  "description": "A simple messaging/notification tool for meeting up",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chinedum Ukejianya",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.2",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.2"
+  }
+}
