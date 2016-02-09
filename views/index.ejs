@@ -3,6 +3,7 @@ addHead('<meta name="description" content="Welcome Page">');
 addHead('<meta name="author" content="Chinedum Ukejianya">');
 addStyle('flat-ui.min.css', { rel: 'stylesheet' });
 addStyle('vendor/bootstrap.min.css', { rel: 'stylesheet' });
+addStyle('login.css', { rel: 'stylesheet' });
 addScript('footer', 'vendor/jquery.min.js');
 addScript('footer', 'flat-ui.min.js');
 %>
@@ -24,15 +25,15 @@ addScript('footer', 'flat-ui.min.js');
         -moz-transform: translateX(-50%) translateY(-50%);
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
-        background: url(flat-ui/dist/img/christophpantelslowmotiondropmp4.jpg) no-repeat;
+        background: url(views/img/christophpantelslowmotiondropmp4.jpg) no-repeat;
         background-size: cover;
     }
     </style>
   </head>
   <body>
     <header>
-      <video style="width: 1457px; height: auto; visibility: visible;" autoplay="autoplay" muted="muted" loop poster="flat-ui/dist/img/christophpantelslowmotiondropmp4.jpg">
-        <source src="flat-ui/dist/img/christophpantelslowmotiondropmp4.mp4" type="video/mp4">
+      <video style="width: 1457px; height: auto; visibility: visible;" autoplay="autoplay" muted="muted" loop poster="views/img/christophpantelslowmotiondropmp4.jpg">
+        <source src="views/img/christophpantelslowmotiondropmp4.mp4" type="video/mp4">
       </video>
     </header>
     <div class="container">
@@ -41,8 +42,10 @@ addScript('footer', 'flat-ui.min.js');
         <h1><span class="fa fa-lock"></span> Lunch </h1>
 
         <p> Login or Register with:</p>
-
-        <a href="/login" class="btn btn-default btn-wide"><span class="fui-user"></span> Login </a>
+        <div class="dropdown">
+          <button class="btn btn-default btn-wide dropdown-toggle"><span class="fui-user" data-toggle="dropdown"></span> Login </a>
+            <% include login %>
+        </div>
         <a href="/signup" class="btn btn-default btn-wide" style="background-color:#3498DB"><span class="fui-user"></span> Signup</a>
       </div>
     </div>

@@ -14,16 +14,25 @@ var session      = require('express-session');
 
 var configDB = require('./config/database.js')
 
+var static = function(dir) {
+  return express.static(path.join(__dirname, dir));
+}
+
 mongoose.connect(configDB.url);
 
 require('./config/passport')(passport);
 
 app.set('view engine', 'ejs');
 
-app.use(express.static(path.join(__dirname, 'views/bower_components')));
+app.use('/views/css', static('views/bower_components/flat-ui/dist/css'));
+app.use('/views/css', static('views/css'));
+app.use('/views/js', static('views/bower_components/flat-ui/dist/js'));
+app.use('/views/img', static('views/bower_components/flat-ui/dist/img'));
+app.use('/views/fonts', static('views/bower_components/flat-ui/dist/fonts'));
+
 app.use(ejsHelper({
-    cssPath: 'flat-ui/dist/css/',
-    jsPath: 'flat-ui/dist/js/',
+    cssPath: 'views/css/',
+    jsPath: 'views/js/',
 }));
 app.use(morgan('dev')); //log every request to the console
 app.use(cookieParser());
