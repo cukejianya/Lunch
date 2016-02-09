@@ -1,0 +1,25 @@
+{
+  "name": "views",
+  "authors": [
+    "Chinedum <cukejianya@gmail.com>"
+  ],
+  "description": "dependecies for the view",
+  "main": "index.ejx",
+  "moduleType": [],
+  "keywords": [
+    "lunch"
+  ],
+  "license": "MIT",
+  "homepage": "cukejianya.github.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flat-ui": "~2.2.2"
+  }
+}
