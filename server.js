@@ -18,6 +18,8 @@ mongoose.connect(configDB.url);
 
 require('./config/passport')(passport);
 
+app.set('view engine', 'ejs');
+
 app.use(express.static(path.join(__dirname, 'views/bower_components')));
 app.use(ejsHelper({
     cssPath: 'flat-ui/dist/css/',
@@ -28,7 +30,6 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set('view engine', 'ejs');
 
 // require for passport
 app.use(session({
