@@ -1,9 +1,11 @@
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 8080;
+var ejsHelper = require('ejs-helper');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
+var path = require('path');
 
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -16,6 +18,11 @@ mongoose.connect(configDB.url);
 
 require('./config/passport')(passport);
 
+app.use(express.static(path.join(__dirname, 'views/bower_components')));
+app.use(ejsHelper({
+    cssPath: 'flat-ui/dist/css/',
+    jsPath: 'flat-ui/dist/js/',
+}));
 app.use(morgan('dev')); //log every request to the console
 app.use(cookieParser());
 app.use(bodyParser.json());
