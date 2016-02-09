@@ -7,7 +7,12 @@ var routes = function(app, passport) {
     res.render('login.ejs', {message: req.flash('loginMessage') });
   });
 
-  //*process login stuff HERE*
+  //*process login stuff HERE
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect : '/profile',
+    failureRedirect : '/login',
+    failureFlash : true
+  }))
 
   app.get('/signup', function(req, res) {
     res.render('signup.ejs', {message: req.flash('signupMessage') });
