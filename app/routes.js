@@ -8,6 +8,12 @@ var routes = function(app, passport) {
   });
 
   //*process login stuff HERE
+  app.post('/signup', passport.authenticate('local-signup', {
+    successRedirect : '/profile',
+    failureRedirect : '/signup',
+    failureFlash : true
+  }));
+
   app.post('/login', passport.authenticate('local-login', {
     successRedirect : '/profile',
     failureRedirect : '/login',
@@ -24,7 +30,7 @@ var routes = function(app, passport) {
     })
   });
 
-  app.get('logout', function(req, res) {
+  app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
   });

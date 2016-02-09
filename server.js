@@ -14,7 +14,7 @@ var configDB = require('./config/database.js')
 
 mongoose.connect(configDB.url);
 
-//require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 app.use(morgan('dev')); //log every request to the console
 app.use(cookieParser());
