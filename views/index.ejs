@@ -1,24 +1,29 @@
+<%
+addHead('<meta name="description" content="Welcome Page">');
+addHead('<meta name="author" content="Chinedum Ukejianya">');
+addStyle('flat-ui.min.css');
+addStyle('vendor/bootstrap.min.css');
+addScript('footer', 'flat-ui.min.js');
+addScript('footer', 'vendor/jquery.min.js');
+%>
+
 <!doctype html>
 <html>
   <head>
-    <title>Lunch</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-    <style>
-      body {padding -top:80px; }
-    </style>
+    <% include header %>
   </head>
   <body>
-    <div class+"container">
+    <div class="container">
 
       <div class="jumbotron text-center">
         <h1><span class="fa fa-lock"></span> Lunch </h1>
 
         <p> Login or Register with:</p>
 
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login </a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+        <a href="/login" class="btn btn-embossed btn-primary" style="background-color:#1ABC9C"><span class="fa fa-user"></span> Local Login </a>
+        <a href="/signup" class="btn btn-embossed btn-primary" style="background-color:#3498DB"><span class="fa fa-user"></span> Local Signup</a>
       </div>
     </div>
+    <%- scripts('footer'); %>
   </body>
 </html>
