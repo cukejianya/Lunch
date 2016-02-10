@@ -1,12 +1,18 @@
+<%
+addHead('<meta name="description" content="Welcome Page">');
+addHead('<meta name="author" content="Chinedum Ukejianya">');
+addStyle('flat-ui.min.css', { rel: 'stylesheet' });
+addStyle('vendor/bootstrap.min.css', { rel: 'stylesheet' });
+addStyle('', {rel: 'stylesheet'})
+addScript('footer', 'vendor/jquery.min.js');
+addScript('footer', 'flat-ui.min.js');
+%>
+
 <!-- views/profile.ejs -->
 <!doctype html>
 <html>
   <head>
-      <title>Lunch</title>
-      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-      <style>
-          body        { padding-top:80px; word-wrap:break-word; }
+      <% include header %>
       </style>
   </head>
   <body>
@@ -34,5 +40,6 @@
       </div>
 
     </div>
+    <% include footer %>
   </body>
 </html>
