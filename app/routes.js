@@ -1,6 +1,6 @@
 var routes = function(app, passport) {
   app.get('/', function(req, res) {
-    res.render('index.ejs');
+    res.render('index.ejs', {message: req.flash('loginMessage') });
   });
 
   app.get('/login', function(req,res) {
@@ -16,7 +16,7 @@ var routes = function(app, passport) {
 
   app.post('/login', passport.authenticate('local-login', {
     successRedirect : '/profile',
-    failureRedirect : '/login',
+    failureRedirect : '/',
     failureFlash : true
   }))
 

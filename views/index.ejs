@@ -1,24 +1,50 @@
+<%
+addHead('<meta name="description" content="Welcome Page">');
+addHead('<meta name="author" content="Chinedum Ukejianya">');
+addStyle('flat-ui.min.css', { rel: 'stylesheet' });
+addStyle('vendor/bootstrap.min.css', { rel: 'stylesheet' });
+addStyle('login.css', {rel: 'stylesheet'})
+addScript('footer', 'vendor/jquery.min.js');
+addScript('footer', 'flat-ui.min.js');
+%>
+
 <!doctype html>
 <html>
   <head>
-    <title>Lunch</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-    <style>
-      body {padding -top:80px; }
+    <% include header %>
+      video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        background-color:black;
+        background-size: cover;
+    }
     </style>
   </head>
   <body>
-    <div class+"container">
+    <header>
+      <video style="width: 1457px; height: auto; visibility: visible;" autoplay="autoplay" muted="muted" loop>
+        <source src="views/img/Restaurant - 1192.mp4" type="video/mp4">
+      </video>
+    </header>
+    <div class="col-sm-6 col-sm-offset-3">
 
       <div class="jumbotron text-center">
         <h1><span class="fa fa-lock"></span> Lunch </h1>
+        <hr>
+        <% include login %>
 
-        <p> Login or Register with:</p>
-
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login </a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
       </div>
     </div>
+    <% include footer %>
   </body>
 </html>
