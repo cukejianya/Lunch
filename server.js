@@ -27,7 +27,7 @@ app.set('view engine', 'ejs');
 app.use('/views/css', static('views/bower_components/flat-ui/dist/css'));
 app.use('/views/css', static('views/css'));
 app.use('/views/js', static('views/bower_components/flat-ui/dist/js'));
-app.use('/views/img', static('views/bower_components/flat-ui/dist/img'));
+app.use('/views/img', static('views/img'));
 app.use('/views/fonts', static('views/bower_components/flat-ui/dist/fonts'));
 
 app.use(ejsHelper({

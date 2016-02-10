@@ -1,5 +1,7 @@
-<div class="container">
-<h3><span class="fa fa-sign-in"></span>Login</h3>
+<h3><span class="fa fa-sign-in"></span>Log in</h3>
+<div class="col-sm-12 col-lg-12" style="background-color: #2ba6cb;">
+  <br>
+  <br>
   <div class="col-sm-12">
     <% if (message.length) { %>
       <div class="alert alert-danger"><%= message%></div>
@@ -13,7 +15,7 @@
           <label class="control-label"></label>
         </div>
         <div class="col-sm-6">
-          <input type="text" class="form-control" name="email">
+          <input type="text" class="form-control flat" name="email" placeholder="Email">
         </div>
       </div>
 
@@ -23,15 +25,15 @@
           <label class="control-label"></label>
         </div>
         <div class="col-sm-6">
-          <input type="password" class="form-control" name="password">
+          <input type="password" class="form-control flat" name="password" placeholder="Password">
         </div>
       </div>
 
       <button type="submit" class="btn btn-warning btn-lg">Login</button>
+      <span> or </span>
       <a href='/signup' type="submit" class="btn btn-danger btn-lg">Sign Up</a>
     </form>
 
-    <hr>
-    
+    <br>
   </div>
 </div>
