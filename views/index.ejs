@@ -3,7 +3,7 @@ addHead('<meta name="description" content="Welcome Page">');
 addHead('<meta name="author" content="Chinedum Ukejianya">');
 addStyle('flat-ui.min.css', { rel: 'stylesheet' });
 addStyle('vendor/bootstrap.min.css', { rel: 'stylesheet' });
-addStyle('login.css', { rel: 'stylesheet' });
+addStyle('login.css', {rel: 'stylesheet'})
 addScript('footer', 'vendor/jquery.min.js');
 addScript('footer', 'flat-ui.min.js');
 %>
@@ -42,11 +42,8 @@ addScript('footer', 'flat-ui.min.js');
         <h1><span class="fa fa-lock"></span> Lunch </h1>
 
         <p> Login or Register with:</p>
-        <div class="dropdown">
-          <button class="btn btn-default btn-wide dropdown-toggle"><span class="fui-user" data-toggle="dropdown"></span> Login </a>
-            <% include login %>
-        </div>
-        <a href="/signup" class="btn btn-default btn-wide" style="background-color:#3498DB"><span class="fui-user"></span> Signup</a>
+        <% include login %>
+
       </div>
     </div>
     <% include footer %>
