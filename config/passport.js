@@ -34,6 +34,9 @@ var pass = function(passport) {
           // set the user's local credentials
           newUser.local.email = email;
           newUser.local.password = newUser.generateHash(password);
+          newUser.local.fullname.first = req.body.first
+          newUser.local.fullname.last = req.body.last
+          newUser.local.phone = req.body.phone
 
           // save the user
           newUser.save(function(err) {
